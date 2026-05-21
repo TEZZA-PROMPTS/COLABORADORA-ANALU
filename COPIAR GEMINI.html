@@ -275,6 +275,7 @@
       padding:45px 20px 30px;
       color:#9f7787;
       font-size:0.85rem;
+      line-height:1.8;
     }
 
     /* EXPLOSÃO */
@@ -303,6 +304,37 @@
         translate(var(--x),var(--y))
         scale(1.8)
         rotate(360deg);
+      }
+
+    }
+
+    /* MENSAGEM ROSA */
+
+    @keyframes fadeMessage{
+
+      0%{
+        opacity:0;
+        transform:
+        translateX(-50%)
+        translateY(20px);
+      }
+
+      15%{
+        opacity:1;
+        transform:
+        translateX(-50%)
+        translateY(0px);
+      }
+
+      85%{
+        opacity:1;
+      }
+
+      100%{
+        opacity:0;
+        transform:
+        translateX(-50%)
+        translateY(20px);
       }
 
     }
@@ -360,7 +392,7 @@
     </div>
 
     <div class="sub">
-      TEZZA PROMPTS OFICIAL <br><br>
+      TEZZA PROMPTS OFICIAL
     </div>
 
   </header>
@@ -394,42 +426,48 @@ GEMINI [MODO PRO]
   </div>
 
   <!-- FOOTER -->
-  
+
   <footer>
-    MARQUE @analu_zpt
-  <footer>  
-ANALU • TEZZA PROMPTS — Conteúdo protegido.
+    MARQUE @analu_zpt <br>
+    ANALU • TEZZA PROMPTS — Conteúdo protegido.
   </footer>
 
   <!-- SCRIPT -->
 
   <script>
 
-    function copyPrompt(event, id){
+    async function copyPrompt(event, id){
 
       const el = document.getElementById(id);
 
-      const range = document.createRange();
-      range.selectNodeContents(el);
+      try{
 
-      const selection = window.getSelection();
+        await navigator.clipboard.writeText(el.innerText);
 
-      selection.removeAllRanges();
-      selection.addRange(range);
+      } catch(err){
 
-      document.execCommand('copy');
+        const range = document.createRange();
+        range.selectNodeContents(el);
 
-      selection.removeAllRanges();
+        const selection = window.getSelection();
+
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        document.execCommand('copy');
+
+        selection.removeAllRanges();
+      }
 
       createExplosion(event);
 
-      alert("🌸 Prompt copiado com sucesso!");
+      showMessage();
 
     }
 
     function createExplosion(event){
 
-      const amount = 40;
+      const amount = 45;
 
       for(let i = 0; i < amount; i++){
 
@@ -440,10 +478,10 @@ ANALU • TEZZA PROMPTS — Conteúdo protegido.
         flower.innerHTML = "🌸";
 
         const x =
-        (Math.random() - 0.5) * 550 + "px";
+        (Math.random() - 0.5) * 700 + "px";
 
         const y =
-        (Math.random() - 0.5) * 550 + "px";
+        (Math.random() - 0.5) * 700 + "px";
 
         flower.style.setProperty('--x', x);
         flower.style.setProperty('--y', y);
@@ -452,7 +490,7 @@ ANALU • TEZZA PROMPTS — Conteúdo protegido.
         flower.style.top = event.clientY + "px";
 
         flower.style.fontSize =
-        (18 + Math.random() * 26) + "px";
+        (18 + Math.random() * 30) + "px";
 
         document.body.appendChild(flower);
 
@@ -460,9 +498,41 @@ ANALU • TEZZA PROMPTS — Conteúdo protegido.
 
           flower.remove();
 
-        },1500);
+        },1700);
 
       }
+
+    }
+
+    function showMessage(){
+
+      const msg = document.createElement("div");
+
+      msg.innerHTML = "🌸 Prompt copiado com sucesso!";
+
+      msg.style.position = "fixed";
+      msg.style.bottom = "30px";
+      msg.style.left = "50%";
+      msg.style.transform = "translateX(-50%)";
+      msg.style.background =
+      "linear-gradient(135deg,#ffb7d3,#f48fb1)";
+      msg.style.color = "white";
+      msg.style.padding = "14px 24px";
+      msg.style.borderRadius = "999px";
+      msg.style.fontWeight = "600";
+      msg.style.zIndex = "99999";
+      msg.style.boxShadow =
+      "0 10px 30px rgba(236,114,156,0.35)";
+      msg.style.animation =
+      "fadeMessage 2.2s ease forwards";
+
+      document.body.appendChild(msg);
+
+      setTimeout(() => {
+
+        msg.remove();
+
+      },2200);
 
     }
 
