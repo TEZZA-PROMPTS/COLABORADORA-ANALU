@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  
+  <!-- TÍTULO LIMPO PARA O LINK -->
   <title>ANALU • TEZZA PROMPTS</title>
+
+  <!-- CONFIGURAÇÃO PARA O LINK FICAR COMPACTO -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ANALU • TEZZA PROMPTS">
+  <meta property="og:title" content="ANALU • TEZZA PROMPTS">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tezza-prompts.github.io/COLABORADORA-ANALU/COPIAR%20GEMINI.html">
+  <meta name="description" content="TEZZA PROMPTS OFICIAL">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -498,7 +507,7 @@ GEMINI [MODO PRO]
 
           flower.remove();
 
-        },1700);
+        }, 1500);
 
       }
 
@@ -508,31 +517,26 @@ GEMINI [MODO PRO]
 
       const msg = document.createElement("div");
 
-      msg.innerHTML = "🌸 Prompt copiado com sucesso!";
+      msg.innerHTML = "PROMPT COPIADO!";
 
       msg.style.position = "fixed";
-      msg.style.bottom = "30px";
+      msg.style.bottom = "50px";
       msg.style.left = "50%";
-      msg.style.transform = "translateX(-50%)";
-      msg.style.background =
-      "linear-gradient(135deg,#ffb7d3,#f48fb1)";
+      msg.style.background = "#d85f91";
       msg.style.color = "white";
-      msg.style.padding = "14px 24px";
-      msg.style.borderRadius = "999px";
-      msg.style.fontWeight = "600";
-      msg.style.zIndex = "99999";
-      msg.style.boxShadow =
-      "0 10px 30px rgba(236,114,156,0.35)";
-      msg.style.animation =
-      "fadeMessage 2.2s ease forwards";
+      msg.style.padding = "15px 40px";
+      msg.style.borderRadius = "99px";
+      msg.style.fontWeight = "700";
+      msg.style.fontSize = "1.2rem";
+      msg.style.zIndex = "10000";
+      msg.style.boxShadow = "0 10px 30px rgba(216,95,145,0.4)";
+      msg.style.animation = "fadeMessage 2.5s forwards";
 
       document.body.appendChild(msg);
 
       setTimeout(() => {
-
         msg.remove();
-
-      },2200);
+      }, 2500);
 
     }
 
