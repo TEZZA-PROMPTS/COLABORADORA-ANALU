@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  
+  <!-- TÍTULO LIMPO PARA O LINK -->
   <title>ANALU • TEZZA PROMPTS</title>
+
+  <!-- CONFIGURAÇÃO PARA O LINK FICAR COMPACTO -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ANALU • TEZZA PROMPTS">
+  <meta property="og:title" content="ANALU • TEZZA PROMPTS">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tezza-prompts.github.io/COLABORADORA-ANALU/COPIAR%20GEMINI.html">
+  <meta name="description" content="TEZZA PROMPTS OFICIAL">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -408,6 +417,7 @@
       </div>
 
 <pre id="prompt1">
+  
 GEMINI [MODO PRO]
 
 Ultra-realistic cinematic avatar 3D female portrait, Blender Cycles render in CGI, inspired by Seedream 5.0 beauty realism and high-end IMVU/The Sims virtual aesthetics. Clearly a fictional digital avatar and not a real photograph. Hyper-detailed virtual influencer design with stylized CGI beauty proportions, luxury editorial aesthetics, advanced cinematic lighting, ultra-polished 3D rendering, and “TEZZA PROMPTS” text at the bottom center in elegant minimalist typography.
@@ -452,7 +462,9 @@ MOOD & AESTHETIC
 Luxury tropical influencer aesthetic mixed with modern Brazilcore fashion energy, beach-inspired minimalism, and premium virtual-avatar beauty rendering. Stylish, soft, feminine, cinematic, polished, and high-status atmosphere inspired by luxury social-media editorial photography.
 
 STYLE & RENDER QUALITY
-Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 beauty rendering, 8K UHD quality, physically accurate lighting and materials, realistic skin micro-detail, IMVU-inspired beauty repaint style, high-fidelity feminine avatar rendering, realistic depth of field, glossy beauty aesthetic, polished virtual influencer atmosphere, advanced ray tracing, realistic reflections, luxury editorial lighting, ultra-clean cinematic render quality, and clearly fictional CGI avatar aesthetics instead of a real photograph.</pre>
+Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 beauty rendering, 8K UHD quality, physically accurate lighting and materials, realistic skin micro-detail, IMVU-inspired beauty repaint style, high-fidelity feminine avatar rendering, realistic depth of field, glossy beauty aesthetic, polished virtual influencer atmosphere, advanced ray tracing, realistic reflections, luxury editorial lighting, ultra-clean cinematic render quality, and clearly fictional CGI avatar aesthetics instead of a real photograph.
+  
+</pre>
 
       <button onclick="copyPrompt(event, 'prompt1')">
         🌸 Copiar Prompt
@@ -539,7 +551,7 @@ Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 
 
           flower.remove();
 
-        },1700);
+        }, 1500);
 
       }
 
@@ -549,31 +561,26 @@ Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 
 
       const msg = document.createElement("div");
 
-      msg.innerHTML = "🌸 Prompt copiado com sucesso!";
+      msg.innerHTML = "PROMPT COPIADO!";
 
       msg.style.position = "fixed";
-      msg.style.bottom = "30px";
+      msg.style.bottom = "50px";
       msg.style.left = "50%";
-      msg.style.transform = "translateX(-50%)";
-      msg.style.background =
-      "linear-gradient(135deg,#ffb7d3,#f48fb1)";
+      msg.style.background = "#d85f91";
       msg.style.color = "white";
-      msg.style.padding = "14px 24px";
-      msg.style.borderRadius = "999px";
-      msg.style.fontWeight = "600";
-      msg.style.zIndex = "99999";
-      msg.style.boxShadow =
-      "0 10px 30px rgba(236,114,156,0.35)";
-      msg.style.animation =
-      "fadeMessage 2.2s ease forwards";
+      msg.style.padding = "15px 40px";
+      msg.style.borderRadius = "99px";
+      msg.style.fontWeight = "700";
+      msg.style.fontSize = "1.2rem";
+      msg.style.zIndex = "10000";
+      msg.style.boxShadow = "0 10px 30px rgba(216,95,145,0.4)";
+      msg.style.animation = "fadeMessage 2.5s forwards";
 
       document.body.appendChild(msg);
 
       setTimeout(() => {
-
         msg.remove();
-
-      },2200);
+      }, 2500);
 
     }
 
