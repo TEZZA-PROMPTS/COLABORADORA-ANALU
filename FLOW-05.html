@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- TÍTULO LIMPO PARA O LINK -->
+  <title>ANALU • TEZZA PROMPTS</title>
+
+  <!-- CONFIGURAÇÃO PARA O LINK FICAR COMPACTO -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ANALU • TEZZA PROMPTS">
+  <meta property="og:title" content="ANALU • TEZZA PROMPTS">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tezza-prompts.github.io/COLABORADORA-ANALU/COPIAR%20FLOW.html">
+  <meta name="description" content="TEZZA PROMPTS OFICIAL">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:
+      radial-gradient(circle at top,#fff8fb 0%,#ffeef5 45%,#ffdbe8 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+      color:#744b5d;
+      position:relative;
+    }
+
+    /* FUNDO */
+
+    body::before,
+    body::after{
+      content:"🌸";
+      position:fixed;
+      font-size:120px;
+      opacity:0.07;
+      z-index:0;
+      pointer-events:none;
+      animation:float 7s ease-in-out infinite;
+    }
+
+    body::before{
+      top:30px;
+      left:20px;
+    }
+
+    body::after{
+      bottom:30px;
+      right:20px;
+      animation-delay:2s;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px) rotate(0deg);
+      }
+
+      50%{
+        transform:translateY(-10px) rotate(8deg);
+      }
+    }
+
+    /* FLORES CAINDO */
+
+    .falling-petals{
+      position:fixed;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .falling-petals span{
+      position:absolute;
+      top:-10%;
+      font-size:22px;
+      opacity:0.7;
+      animation:fall linear infinite;
+    }
+
+    .falling-petals span:nth-child(1){
+      left:8%;
+      animation-duration:12s;
+    }
+
+    .falling-petals span:nth-child(2){
+      left:22%;
+      animation-duration:15s;
+    }
+
+    .falling-petals span:nth-child(3){
+      left:40%;
+      animation-duration:13s;
+    }
+
+    .falling-petals span:nth-child(4){
+      left:58%;
+      animation-duration:17s;
+    }
+
+    .falling-petals span:nth-child(5){
+      left:75%;
+      animation-duration:14s;
+    }
+
+    .falling-petals span:nth-child(6){
+      left:92%;
+      animation-duration:11s;
+    }
+
+    @keyframes fall{
+
+      0%{
+        transform:translateY(-100px) rotate(0deg);
+      }
+
+      100%{
+        transform:translateY(120vh) rotate(360deg);
+      }
+
+    }
+
+    /* HEADER */
+
+    header{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:70px 20px 45px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .logo span{
+      font-size:4rem;
+      font-weight:700;
+      color:#d85f91;
+      text-shadow:
+      0 4px 20px rgba(255,140,180,0.35);
+    }
+
+    .flower{
+      font-size:2.7rem;
+      animation:pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse{
+      0%,100%{
+        transform:scale(1);
+      }
+
+      50%{
+        transform:scale(1.12);
+      }
+    }
+
+    .sub{
+      color:#9d7183;
+      font-size:1rem;
+      line-height:1.9;
+      font-weight:500;
+    }
+
+    /* CARD */
+
+    .container{
+      position:relative;
+      z-index:2;
+      max-width:950px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .prompt-box{
+      background:rgba(255,255,255,0.55);
+      backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.7);
+      border-radius:32px;
+      padding:30px;
+      box-shadow:
+      0 12px 45px rgba(255,170,200,0.2);
+      overflow:hidden;
+      position:relative;
+      transition:0.35s;
+    }
+
+    .prompt-box:hover{
+      transform:translateY(-4px);
+      box-shadow:
+      0 20px 55px rgba(255,170,200,0.28);
+    }
+
+    .prompt-box::before{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      background:rgba(255,190,215,0.28);
+      border-radius:50%;
+      top:-120px;
+      right:-120px;
+      filter:blur(18px);
+    }
+
+    .prompt-title{
+      position:relative;
+      z-index:2;
+      font-size:1.25rem;
+      font-weight:600;
+      color:#cf5f89;
+      margin-bottom:18px;
+      letter-spacing:1px;
+    }
+
+    pre{
+      position:relative;
+      z-index:2;
+      white-space:pre-wrap;
+      word-wrap:break-word;
+      background:#fff9fc;
+      border:1px solid #ffd6e5;
+      border-radius:22px;
+      padding:24px;
+      line-height:1.8;
+      font-size:0.95rem;
+      color:#6c4c5c;
+      box-shadow:
+      inset 0 2px 10px rgba(255,190,215,0.08);
+    }
+
+    /* BOTÃO */
+
+    button{
+      position:relative;
+      z-index:2;
+      margin-top:24px;
+      border:none;
+      background:
+      linear-gradient(135deg,#ffb7d3,#f48fb1,#eb6f9f);
+      color:white;
+      padding:14px 30px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:1rem;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:
+      0 8px 25px rgba(236,114,156,0.35);
+    }
+
+    button:hover{
+      transform:scale(1.05);
+      box-shadow:
+      0 14px 35px rgba(236,114,156,0.45);
+    }
+
+    .hint{
+      margin-top:14px;
+      color:#aa8192;
+      font-size:0.82rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:45px 20px 30px;
+      color:#9f7787;
+      font-size:0.85rem;
+      line-height:1.8;
+    }
+
+    /* EXPLOSÃO */
+
+    .explosion-flower{
+      position:fixed;
+      font-size:26px;
+      pointer-events:none;
+      z-index:9999;
+      animation:explode 1.5s ease-out forwards;
+    }
+
+    @keyframes explode{
+
+      0%{
+        opacity:1;
+        transform:
+        translate(0,0)
+        scale(1)
+        rotate(0deg);
+      }
+
+      100%{
+        opacity:0;
+        transform:
+        translate(var(--x),var(--y))
+        scale(1.8)
+        rotate(360deg);
+      }
+
+    }
+
+    /* MENSAGEM ROSA */
+
+    @keyframes fadeMessage{
+
+      0%{
+        opacity:0;
+        transform:
+        translateX(-50%)
+        translateY(20px);
+      }
+
+      15%{
+        opacity:1;
+        transform:
+        translateX(-50%)
+        translateY(0px);
+      }
+
+      85%{
+        opacity:1;
+      }
+
+      100%{
+        opacity:0;
+        transform:
+        translateX(-50%)
+        translateY(20px);
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:700px){
+
+      .logo span{
+        font-size:2.7rem;
+      }
+
+      .flower{
+        font-size:2rem;
+      }
+
+      .prompt-box{
+        padding:22px;
+      }
+
+      pre{
+        font-size:0.88rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- FLORES -->
+
+  <div class="falling-petals">
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+  </div>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+
+      <div class="flower">🌸</div>
+
+      <span>ANALU</span>
+
+      <div class="flower">🌸</div>
+
+    </div>
+
+    <div class="sub">
+      TEZZA PROMPTS OFICIAL
+    </div>
+
+  </header>
+
+  <!-- CONTAINER -->
+
+  <div class="container">
+
+    <div class="prompt-box">
+
+      <div class="prompt-title">
+        ANALU COLABORADORA
+      </div>
+<div class="prompt-title"> FLOW </div>
+
+<pre id="prompt1">
+
+Ultra-realistic cinematic avatar 3D friends portrait, Blender Cycles render in CGI, inspired by Seedream 5.0 beauty realism and high-end IMVU/The Sims virtual aesthetics. Clearly fictional digital avatars and not real photographs. Hyper-detailed virtual influencer friends design with stylized CGI beauty proportions, luxury editorial aesthetics, advanced cinematic lighting, ultra-polished 3D rendering, and “TEZZA PROMPTS” text at the bottom center in elegant minimalist typography.
+
+
+IMPORTANT IDENTITY PRIORITY
+Use the uploaded reference images as absolute facial identity sources. Facial identity accuracy is more important than cinematic beauty enhancement, editorial stylization, IMVU aesthetics, or luxury beauty rendering. Maintain exact recognizable identity fidelity for both avatars independently. Identity separation is mandatory.
+
+
+CAMERA & COMPOSITION
+Vertical 9:16 aspect ratio cinematic urban portrait shot in a bright outdoor street setting. Medium full-shot framing two female avatars on a sunny sidewalk. The first avatar is standing and leaning forward with one hand on her knee, while the second avatar is sitting directly on the concrete sidewalk, leaning back slightly with one hand supporting her weight. Sharp focus on both subjects, their layered streetwear outfits, and the vibrant urban background featuring city buildings and trees.
+
+
+POSE & BODY POSITIONING
+First female avatar positioned standing with a stylish lean, one leg slightly forward, creating a dynamic diagonal line. Second female avatar sitting on the ground with legs crossed and one arm extended to the side. Both avatars preserve the exact body posture, weight distribution, and limb placement from the visual source. Natural youthful feminine body language with a relaxed streetwear editorial energy.
+
+
+HEAD POSITION & GAZE
+First female avatar looking directly at the camera through her glasses with a confident, slightly lowered gaze. Second female avatar looking directly at the camera with a captivating and steady expression. Precise replication of the head angles and facial orientation to maintain the authentic urban fashion vibe.
+
+
+FACIAL EXPRESSION
+Both avatars maintain calm, serious, and sophisticated expressions with a subtle detached luxury energy. The mood is cool, fashionable, and relaxed, typical of a high-end streetwear campaign. Atmosphere feels cinematic, youthful, stylish, and naturally confident.
+
+
+FIRST FEMALE AVATAR
+
+
+FACE & IDENTITY
+Adult female CGI avatar with facial identity preserved exactly like the left subject. Use ONLY the features of the left subject for this avatar. Preserve the exact facial geometry, lip structure, and recognizable feminine identity without modification. Smooth youthful facial structure with soft definition and relaxed editorial energy. Skin tone features a soft light-medium complexion with realistic pores and refined CGI realism. Sem descrição de tatuagens no prompt.
+
+
+HAIR
+Dark black hair with soft pastel pink highlights, featuring delicate blush pink strands framing the face. The hair is long, straight, and silky, with a heavy, fluid fall over the shoulder and a polished, healthy shine. Realistic strand detail and advanced Blender-style hair rendering.
+
+
+ACCESSORIES & DETAILS
+Rectangular black-frame glasses, a gold chain necklace with a pendant, and a small red heart-shaped pouch hanging from the belt loop. Precise placement and material realism.
+
+
+OUTFIT
+Bright red tube top with small white text on the chest, paired with oversized wide-leg grey trousers. The clothing features realistic fabric textures, visible seams, and natural folds.
+
+
+BODY & PHYSIQUE
+Lean youthful feminine physique with a slim waist and relaxed shoulders. Preserve the exact silhouette and physical presence with polished contour shading.
+
+
+SECOND FEMALE AVATAR
+
+
+FACE & IDENTITY
+Adult female CGI avatar with facial identity preserved exactly like the right subject. Use ONLY the features of the right subject for this avatar. Preserve the exact facial geometry, eye shape, and recognizable identity without enhancement. Maintain the unique beauty characteristics while remaining a clearly fictional CGI avatar. Sem descrição de tatuagens no prompt.
+
+
+HAIR
+Long, silky, and straight blonde hair with a smooth, sleek texture. The hair falls naturally down the back and over the shoulders, displaying a bright, luminous tone with advanced Blender-style rendering and natural density variation.
+
+
+ACCESSORIES & DETAILS
+A black knit beanie cap, a silver arm cuff, and a silver wristwatch. She holds a small red leather handbag by her side. All materials feature physically accurate reflections and textures.
+
+
+OUTFIT
+Light beige high-neck top with a repeated typographic pattern, paired with dark pinstripe wide-leg trousers held by a black leather belt with silver studs. The top features realistic fabric folds and intricate detailing.
+
+
+BODY & PHYSIQUE
+Lean youthful feminine physique with a poised sitting posture and slim limbs. Preserve the exact body proportions and physical interaction with the sidewalk environment.
+
+
+SKIN & REALISM
+Ultra-detailed Seedream 5.0 skin rendering with realistic pores, subtle glossy highlights, and natural skin sheen. Preserve both individual skin tones separately with absolute fidelity. Natural CGI skin texture without excessive smoothing, preserving realistic cinematic Blender-style material rendering while remaining clearly fictional avatars.
+
+
+LIGHTING
+Bright, natural daylight with a clear sun source, creating soft highlights on the skin and hair while casting realistic shadows on the sidewalk. The lighting emphasizes the textures of the streetwear fabrics and the depth of the urban environment.
+
+
+ENVIRONMENT
+Vibrant urban street background during the day, featuring multi-story city buildings with yellow and white facades, a tall green tree, and a clean concrete sidewalk. The setting is bright and airy, providing a modern metropolitan backdrop for the fashion portrait.
+
+
+MOOD & AESTHETIC
+Urban streetwear aesthetic, premium social-media editorial photography, and polished Y2K feminine fashion energy. Stylish, youthful, sophisticated, and naturally confident atmosphere inspired by modern luxury fashion campaigns.
+
+
+STYLE & RENDER QUALITY
+Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 beauty rendering, 8K UHD quality, physically accurate lighting and materials, realistic skin micro-detail, IMVU-inspired beauty repaint style, high-fidelity couple avatar rendering, realistic depth of field, glossy beauty aesthetic, polished virtual influencer atmosphere, advanced ray tracing, realistic reflections, luxury editorial lighting, ultra-clean cinematic render quality, and clearly fictional CGI avatar aesthetics instead of real photographs
+</pre>
+
+      <button onclick="copyPrompt(event, 'prompt1')">
+        🌸 Copiar Prompt
+      </button>
+
+      <div class="hint">
+        Clique para copiar automaticamente.
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+    MARQUE @analu_zpt <br>
+    ANALU • TEZZA PROMPTS — Conteúdo protegido.
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    async function copyPrompt(event, id){
+
+      const el = document.getElementById(id);
+
+      try{
+
+        await navigator.clipboard.writeText(el.innerText);
+
+      } catch(err){
+
+        const range = document.createRange();
+        range.selectNodeContents(el);
+
+        const selection = window.getSelection();
+
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        document.execCommand('copy');
+
+        selection.removeAllRanges();
+      }
+
+      createExplosion(event);
+
+      showMessage();
+
+    }
+
+    function createExplosion(event){
+
+      const amount = 45;
+
+      for(let i = 0; i < amount; i++){
+
+        const flower = document.createElement("div");
+
+        flower.className = "explosion-flower";
+
+        flower.innerHTML = "🌸";
+
+        const x =
+        (Math.random() - 0.5) * 700 + "px";
+
+        const y =
+        (Math.random() - 0.5) * 700 + "px";
+
+        flower.style.setProperty('--x', x);
+        flower.style.setProperty('--y', y);
+
+        flower.style.left = event.clientX + "px";
+        flower.style.top = event.clientY + "px";
+
+        flower.style.fontSize =
+        (18 + Math.random() * 30) + "px";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+
+          flower.remove();
+
+        }, 1500);
+
+      }
+
+    }
+
+    function showMessage(){
+
+      const msg = document.createElement("div");
+
+      msg.innerHTML = "PROMPT COPIADO!";
+
+      msg.style.position = "fixed";
+      msg.style.bottom = "50px";
+      msg.style.left = "50%";
+      msg.style.background = "#d85f91";
+      msg.style.color = "white";
+      msg.style.padding = "15px 40px";
+      msg.style.borderRadius = "99px";
+      msg.style.fontWeight = "700";
+      msg.style.fontSize = "1.2rem";
+      msg.style.zIndex = "10000";
+      msg.style.boxShadow = "0 10px 30px rgba(216,95,145,0.4)";
+      msg.style.animation = "fadeMessage 2.5s forwards";
+
+      document.body.appendChild(msg);
+
+      setTimeout(() => {
+        msg.remove();
+      }, 2500);
+
+    }
+
+  </script>
+
+</body>
+</html>
